@@ -3,6 +3,11 @@
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #    prefix:   /_internal
 
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /comment
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

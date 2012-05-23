@@ -15,6 +15,7 @@
         "doctrine/orm": "2.2.*",
         "doctrine/doctrine-bundle": "dev-master",
 
+        "friendsofsymfony/comment-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "dev-master",
 
         "jms/security-extra-bundle": "1.1.*",

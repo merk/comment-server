@@ -35,6 +35,21 @@
             "source-reference": "1f9435de5c3739551d73e4706405987d4ead6d9b"
         },
         {
+            "package": "friendsofsymfony/comment-bundle",
+            "version": "dev-master",
+            "source-reference": "609c1415f0efa2be8ecb6ae34516a6168f219a92"
+        },
+        {
+            "package": "friendsofsymfony/rest",
+            "version": "dev-master",
+            "source-reference": "d9f772ddb9bb4fd0d952fa45cf0e5e76510b111c"
+        },
+        {
+            "package": "friendsofsymfony/rest-bundle",
+            "version": "dev-master",
+            "source-reference": "1fd512952a31f6db90be63636fab73369994737a"
+        },
+        {
             "package": "friendsofsymfony/user-bundle",
             "version": "dev-master",
             "source-reference": "bf7caa59e437a93cc81de5a380bd161062dd19de"
