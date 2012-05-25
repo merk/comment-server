@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+{# A workaround to get assetic to dump FOSCommentBundle's asset files at a predictable URL #}
+{% javascripts '@FOSCommentBundle/Resources/assets/js/comments.js' output='js/embed.js' %}{% endjavascripts %}
+
+<h1>Comment Server</h1>
+<p>For more information about this server and how it operates, please see the following resources:</p>
+
+<ul>
+    <li><a href="https://github.com/FriendsOfSymfony/FOSCommentBundle">FOSCommentBundle</a> - The bundle used to provide async cross domain comment functionality.</li>
+    <li><a href="https://github.com/merk/comment-server">comment-server</a>: An implementation of FOSCommentBundle with a few other bundles, this is what is running here.</li>
+</ul>
+{% endblock body %}
