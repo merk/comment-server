@@ -1,0 +1,33 @@
+{% set view = view|default('tree') %}
+{% set depth = depth|default(0) %}
+
+<article id="comment-{{ comment.id }}" class="fos_comment_comment_show depth_{{ depth }}"{% if parentId is defined %} data-parent="{{ parentId }}"{% endif %}>
+    <div class="fos_comment_comment_metas">
+        <span class="byline author vcard">Posted by <span class="fn">{{ comment.authorName }}</span></span>
+        <time datetime="{{ comment.createdAt | date('c') }}" pubdate="" data-updated="true">{{ comment.createdAt | date('F jS, Y H:i') }}</time>
+    </div>
+
+    <div class="fos_comment_comment_body">
+        {% if comment is fos_comment_raw %}
+            {{ comment.rawBody | raw }}
+        {% else %}
+            {{ comment.body | nl2br }}
+        {% endif %}
+    </div>
+
+    {% if view is not sameas('flat') %}
+    <div class="fos_comment_comment_replies">
+        <div class="fos_comment_comment_reply">
+            <button data-url="{{ url('fos_comment_new_thread_comments', {"id": comment.thread.id}) }}" data-name="{{ comment.authorName }}" data-parent-id="{{ comment.id }}" class="fos_comment_comment_reply_show_form">{% trans from 'FOSCommentBundle' %}fos_comment_comment_show_reply{% endtrans %}</button>
+        </div>
+
+        {% if children is defined %}
+            {% include "FOSCommentBundle:Thread:comments.html.twig" with { "comments": children, "depth": depth + 1, "parentId": comment.id, "view": view } %}
+        {% endif %}
+    </div>
+    {% endif %}
+</article>
+
+{% if view is sameas('flat') and children is defined %}
+    {% include "FOSCommentBundle:Thread:comments.html.twig" with { "comments": children, "depth": depth + 1, "parentId": comment.id, "view": view } %}
+{% endif %}
