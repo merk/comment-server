@@ -3,6 +3,9 @@ jms_security_extra:
     expressions: true
 
 security:
+    acl:
+        connection: default
+
     providers:
         fos_userbundle:
             id: fos_user.user_manager
@@ -12,6 +15,14 @@ security:
 
     firewalls:
         main:
+            oauth:
+                resource_owners:
+                    google:      oauth_google
+                    github:      oauth_github
+                login_path:      /login
+                failure_path:    /login
+                oauth_user_provider:
+                    service: hwi_oauth.user.provider.fosub_bridge
             pattern: ^/
             form_login:
                 provider: fos_userbundle

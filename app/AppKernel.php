@@ -21,10 +21,16 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new FOS\UserBundle\FOSUserBundle(),
 
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
+
+            new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
+
+            new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
 
             new AppBundle\AppBundle(),
         );

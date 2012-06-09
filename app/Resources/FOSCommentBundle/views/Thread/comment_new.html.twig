@@ -9,13 +9,10 @@
     <div class="fos_comment_comment_form_holder">
         {% block fos_comment_comment_new_form %}
             {% block fos_comment_form_title %}
-                {% if first %}
-                    <h3>{% trans from 'FOSCommentBundle' %}fos_comment_comment_new_headline_first{% endtrans %}</h3>
-                {% elseif parent is not null %}
-                    <h3>{% trans with {"%name%": parent.authorName } from 'FOSCommentBundle' %}fos_comment_comment_reply_reply_to{% endtrans %}</h3>
-                {% else %}
-                    <h3>{% trans from 'FOSCommentBundle' %}fos_comment_comment_new_headline{% endtrans %}</h3>
-                {% endif %}
+            <div class="meta">
+                <h3>Add a comment</h3>
+                {% if app.user %}<p>Logged in as {{ app.user.username }}</p>{% endif %}
+            </div>
             {% endblock %}
 
             <form class="fos_comment_comment_new_form" action="{{ url('fos_comment_post_thread_comments', url_parameters) }}" data-parent="{{ parent.id|default() }}" method="POST">

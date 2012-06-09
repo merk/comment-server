@@ -18,9 +18,16 @@
         "friendsofsymfony/comment-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "dev-master",
 
+        "guzzle/guzzle": "2.6.*",
+
+        "hwi/oauth-bundle": "dev-master",
+
         "jms/security-extra-bundle": "1.1.*",
         "jms/di-extra-bundle": "1.0.*",
 
+        "ornicar/akismet-bundle": "*",
+
+        "sensio/buzz-bundle": "*",
         "sensio/distribution-bundle": "dev-master",
 
         "twig/extensions": "dev-master"

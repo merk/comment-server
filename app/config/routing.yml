@@ -8,6 +8,20 @@ index:
     defaults:
         _controller: AppBundle:Index:index
 
+oauth_google:
+    pattern: /login/google-check
+
+oauth_github:
+    pattern: /login/github-check
+
+hwi_oauth_login:
+    prefix: /login
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+
+hwi_oauth_connect:
+    prefix: /login/connect
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+
 fos_comment_api:
     type: rest
     resource: "@FOSCommentBundle/Resources/config/routing.yml"

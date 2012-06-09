@@ -1,0 +1,7 @@
+{% block hwi_oauth_content %}
+    <div id="login_box">
+    {% for owner in resource_owners %}
+        <a href="{{ owner.url }}">Login with {{ owner.name | trans({}, 'HWIOAuthBundle') }}</a>
+    {% endfor %}
+    </div>
+{% endblock hwi_oauth_content %}
